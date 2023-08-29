@@ -2,7 +2,7 @@ import  { useState } from 'react';
 import AuthForm from '../components/AuthForm';
 
 export default  function Login({ setToken }) {
-    function handleSubmit(e, email , password) {
+    function handleSubmit(e, username , password) {
         e.preventDefault();
         console.log("Login form submitted");
     }
