@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Routes, Route } from "react-router-dom"
-import Products from './components /Products';
+import Products from './pages/Products';
 import Profile from './pages/Profile';
 import Login from "./pages/Login"
 import Register from "./pages/Register"
-import NavBar from "./components/NavBar"
+import NavBar from './components/Navbar';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -12,7 +12,7 @@ function App() {
     <div>
       <NavBar token={token} setToken={setToken} />
       <Routes>
-        <Route path="/posts" element={<Products token={token} />} />
+        <Route path="/products" element={<Products token={token} />} />
         <Route path="/profile" element={<Profile token={token} />} />
         <Route path="/login" element={<Login setToken={setToken} />} />
         <Route path="/register" element={<Register setToken={setToken} />} />

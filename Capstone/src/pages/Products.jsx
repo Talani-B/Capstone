@@ -5,6 +5,7 @@ export default  function Products() {
     const [products, setProducts]= useState([]);
     const [name, setName]= useState('')
     const [text, setText]=useState('')
+    const [imageurl, setImageUrl]=useState('')
 
     
     return (
@@ -12,7 +13,7 @@ export default  function Products() {
         <h1>Products</h1>
      <form>
         <textarea 
-       name="username" 
+       name="name" 
        cols="30" 
         rows="10"
         value={text}
