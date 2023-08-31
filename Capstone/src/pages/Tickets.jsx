@@ -13,13 +13,6 @@ export default  function Tickets() {
        <div>
         <h1>Tickets</h1>
      <form>
-        <textarea 
-       name="name" 
-       cols="30" 
-        rows="10"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        ></textarea>
 
      </form>
      <button>Add To Cart</button>
