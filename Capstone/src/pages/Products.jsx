@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import { getAllProducts } from '../API'
+import { useState, useEffect } from 'react';
+import { fetchAllProducts } from '../API'
 
 export default  function Products() {
     const [products, setProducts]= useState([]);
-    const [name, setName]= useState('')
-    const [text, setText]=useState('')
+    
    
     
     return (
