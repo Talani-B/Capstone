@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Routes, Route } from "react-router-dom"
-import Products from './pages/Products';
+import AllProducts from './pages/Products';
+import SingleProduct from './components/SingleProduct';
 import Profile from './pages/Profile';
 import Login from "./pages/Login"
 import Register from "./pages/Register"
