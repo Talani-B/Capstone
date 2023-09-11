@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react"
 import { fetchAllProducts } from '../API'
 import ProductCard from "../components/ProductCard"
-import NewProductForm from "./NewProductForm"
+import NewProductForm from "../components/NewProductForm"
 
 export default function AllProducts() {
     const [products, setProducts] = useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
     async function fetchData() {
-        const data = await fetchAllProducts()
+        const data = await fetchAllProducts(data)
         setProducts(data)
         setFilteredProducts(data)
     }
@@ -18,7 +18,7 @@ export default function AllProducts() {
         e.preventDefault()
         const search = e.target.value
         const filteredProducts = products.filter((product) => {
-            return product.title.toLowerCase().includes(search.toLowerCase())
+            return product.name.toLowerCase().includes(search.toLowerCase())
         })
         setFilteredProducts(filteredProducts)
     }

@@ -16,18 +16,18 @@ export default function SingleProduct() {
     return <h1> Uploading Product...</h1>
   }
   console.log(product);
-  const { title, price, category, description, imageUrl } = product;
+  const { name, price, category, description, imageUrl} = product;
   return (
     <>
       <Link to='/'>Back to All Products</Link>
       <div className="single-product">
-        <img src={imageUrl} alt={title} />
-        <h2>Title: {title}</h2>
+        <img src={imageUrl} alt={name} />
+        <h2>Name: {name}</h2>
         <p>Price: {price}</p>
         <p>Description: {description}</p>
-        {category &&
+        { category &&
           <section>
-            <h3>Catergory: {category.title}</h3>
+            <h3>Catergory: {category.name}</h3>
           </section>
         }
       </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function Profile({ token }) {
-    const [name, setName] = useState('')
+    const [firstname, setFirstName] = useState('')
     const [products, setProducts] = useState([])
 
     return (

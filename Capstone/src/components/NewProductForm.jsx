@@ -2,7 +2,7 @@ import { useState } from "react"
 import { createNewProduct } from "../API"
 
 export default function NewProductForm({ fetchAllProducts }) {
-   const [title, setTitle] = useState('')
+   const [name, setName] = useState('')
    const [price, setPrice] = useState('')
    const [category, setCategory] = useState('')
    const [description, setDescription] = useState('')
@@ -11,14 +11,14 @@ export default function NewProductForm({ fetchAllProducts }) {
    async function handleSubmit(e) {
       e.preventDefault()
       const newProduct = {
-         title,
+         name,
          price,
          category,
          description,
          image,
       }
       await createNewProduct(newProduct)
-      setTitle('')
+      setName('')
       setPrice('')
       setCategory('')
       setDescription('')
@@ -28,12 +28,12 @@ export default function NewProductForm({ fetchAllProducts }) {
    return (
       <form onSubmit={handleSubmit}>
          <h1> Add New Products</h1>
-         <label htmlFor="title">Title</label>
+         <label htmlFor="name">Name</label>
          <input
             type="text"
-            id="title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
          />
          <label htmlFor="price">Price</label>
          <input
