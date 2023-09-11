@@ -16,7 +16,7 @@ export default function SingleProduct() {
     return <h1> Uploading Product...</h1>
   }
   console.log(product);
-  const { title, price, category, description, imageUrl} = product;
+  const { title, price, category, description, imageUrl } = product;
   return (
     <>
       <Link to='/'>Back to All Products</Link>
@@ -25,7 +25,7 @@ export default function SingleProduct() {
         <h2>Title: {title}</h2>
         <p>Price: {price}</p>
         <p>Description: {description}</p>
-        { category &&
+        {category &&
           <section>
             <h3>Catergory: {category.title}</h3>
           </section>

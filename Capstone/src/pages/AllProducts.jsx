@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { fetchAllProducts } from '../API'
 import ProductCard from "../components/ProductCard"
-import NewProductForm from "../components/NewProductForm"
+import NewProductForm from "./NewProductForm"
 
 export default function AllProducts() {
     const [products, setProducts] = useState([])
