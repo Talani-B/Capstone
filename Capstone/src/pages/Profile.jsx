@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function Profile({ token }) {
     const [firstname, setFirstName] = useState('')
     const [products, setProducts] = useState([])
+    
 
     return (
         <div>

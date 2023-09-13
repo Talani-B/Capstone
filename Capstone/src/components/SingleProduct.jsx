@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom"
 import { fetchProductById } from "../API";
 
-export default function SingleProduct() {
+export default function fetchProductById() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   useEffect(() => {

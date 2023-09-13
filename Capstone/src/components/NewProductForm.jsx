@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { createNewProduct } from "../API"
+import { addNewProduct } from "../API"
 
 export default function NewProductForm({ fetchAllProducts }) {
    const [name, setName] = useState('')
@@ -17,7 +17,7 @@ export default function NewProductForm({ fetchAllProducts }) {
          description,
          image,
       }
-      await createNewProduct(newProduct)
+      await addNewProduct(newProduct)
       setName('')
       setPrice('')
       setCategory('')

@@ -2,51 +2,61 @@ const API_URL = 'https://fakestoreapi.com/products';
 
 export async function fetchAllProducts() {
     try {
-        const response = await fetch(
-            `${API_URL}/products`
-        );
-        const result = await response.json();
-        return result.data.products;
+        const response = await fetch(`${API_URL}`);
+        const AllProducts = await response.json()
+       console.log(AllProducts);
+        return AllProducts;
     } catch (err) {
         console.error(err);
     }
-}
+};
+fetchAllProducts();
 
-export async function fetchProductById(id) {
+export async function singleProduct() {
     try {
         const response = await fetch(
-
-            `${API_URL}/product/${1}`
+            `${API_URL}/${id}`
         );
-        const result = await response.json();
-        console.log(result);
+        const singleProduct = await response.json();
+        console.log(singleProduct);
     } catch (err) {
         console.error(err);
     }
-}
+};
+fetchProductById()
 
-export async function createNewProduct(product) {
+export async function addNewProduct(product) {
     try {
         const response = await fetch(
-            `${API_URL}/products`,
+            `${API_URL}/${productObj}`,
             {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(product),
+                body: JSON.stringify(productObj),
             }
         );
-        const result = await response.json();
-        console.log(result);
+        const NewProduct= await response.json();
+        return NewProduct;
     } catch (err) {
         console.error(err);
     }
 
-}
+};
 
 export async function deleteProduct(id) {
-    await fetch(`${API_URL}/products/${id}`, {
-        method: 'DELETE'
-    })
+    try{
+        const repsonse = await fetch(`
+        ${API_URL}/products/${productId}`, {
+       
+            method: 'DELETE',
+    });
+    const productId = await response.json();
+} catch(err) {
+    console.error(err);
 }
+};
+
+
+

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { deleteProduct} from '../API';
 
 export default function ProductCard({product, fetchAllProducts}) {
-    const { name, price, category, description, imageUrl} = product;
+    const [id, name, price, category, description, imageUrl] = product;
  async function handleClick(id) {
         await deleteProduct(id);
         await fetchAllProducts();
