@@ -12,13 +12,13 @@ export async function fetchAllProducts() {
 };
 fetchAllProducts();
 
-export async function singleProduct() {
+export async function fetchProductById() {
     try {
         const response = await fetch(
             `${API_URL}/${id}`
         );
-        const singleProduct = await response.json();
-        console.log(singleProduct);
+        const productById = await response.json();
+        console.log(productById);
     } catch (err) {
         console.error(err);
     }
@@ -47,7 +47,7 @@ export async function addNewProduct(product) {
 
 export async function deleteProduct(id) {
     try{
-        const repsonse = await fetch(`
+        const response = await fetch(`
         ${API_URL}/products/${productId}`, {
        
             method: 'DELETE',
