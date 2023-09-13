@@ -15,7 +15,7 @@ fetchAllProducts();
 export async function fetchProductById() {
     try {
         const response = await fetch(
-            `${API_URL}/${id}`
+            `${API_URL}/1`
         );
         const productById = await response.json();
         console.log(productById);
@@ -52,7 +52,7 @@ export async function deleteProduct(id) {
        
             method: 'DELETE',
     });
-    const productId = await response.json();
+    const productById = await response.json();
 } catch(err) {
     console.error(err);
 }
