@@ -17,7 +17,7 @@ export default function Products() {
      return(
         <>
         <h1> Shop All Products</h1>
-        {products.map((product, id) => (
+        {products.map((product) => (
             <ProductCard
                 key={id}
                 product={product}
