@@ -2,18 +2,18 @@ import { useState, useEffect} from "react"
 import { fetchAllProducts } from "../API"
 import ProductCard from "../components/ProductCard"
 import NewProductForm from "../components/NewProductForm";
+import fetchProductById from "../components/SingleProduct";
 
 
 export default function Products() {
     const [products, setProducts] = useState([])
     
  async function Products() {
-      const response= await fetchData()
+      const response= await fetchProducts()
       console.log(response);
   }
   useEffect(() => {
-    console.log(products);
-    fetchAllProducts()
+   fetchAllProducts();
   }, [])
      return(
         <>
