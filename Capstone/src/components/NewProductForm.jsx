@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { addNewProduct } from "../API"
 
+
 export default function NewProductForm({ fetchAllProducts }) {
    const [name, setName] = useState('')
    const [price, setPrice] = useState('')

@@ -10,6 +10,7 @@ export default function ProductCard({product, fetchAllProducts}) {
     return (
         <div className="productCard" key={id}>
         <h2>Name: {name}</h2>
+        <p>Id: {id}</p>
         <p>Price: {price}</p>
         <p>Category: {category}</p>
         <p>Decription: {description}</p>

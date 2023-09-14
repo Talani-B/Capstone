@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom"
-import { fetchProductById } from "../API";
+
 
 export default function fetchProductById() {
   const { id } = useParams();
