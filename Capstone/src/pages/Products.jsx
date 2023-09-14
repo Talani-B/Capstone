@@ -9,10 +9,10 @@ export default function Products() {
     
  async function Products() {
       const response= await fetchData()
-      setProducts(response)
+      console.log(response);
   }
   useEffect(() => {
-    console.log("products" , products);
+    console.log(products);
     fetchAllProducts()
   }, [])
      return(
