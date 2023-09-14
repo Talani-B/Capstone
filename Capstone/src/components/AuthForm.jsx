@@ -2,9 +2,10 @@ import { useState } from "react"
 
 export default function AuthForm({ buttonText, handleSubmit}) {
     const [firstname, setFirstName]= useState('')
-    const [lastname, setLastName]= ('')
+    const [lastname, setLastName]= useState('')
     const [username, setUsername]= useState('')
     const [password, setPassword]= useState('')
+    const [email , setEmail]= useState('')
     return (
         <form onSubmit={(e) => handleSubmit(e, firstname, lastname, username , password)}>
         <label htmlFor="firstname">First Name</label>

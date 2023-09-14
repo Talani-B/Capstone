@@ -1,21 +1,22 @@
 import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom"
+import { fetchProductById } from "../API";
 
-
-export default function fetchProductById() {
+export default function SingleProduct() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   useEffect(() => {
     async function fetchData() {
       const data = await fetchProductById(id);
       setProduct(data);
+      console.log("id ", id);
     }
     fetchData();
   }, [id]);
   if (!product) {
     return <h1> Uploading Product...</h1>
   }
-  console.log(product);
+  console.log("products!!!", product);
   const { name, price, category, description, imageUrl} = product;
   return (
     <>

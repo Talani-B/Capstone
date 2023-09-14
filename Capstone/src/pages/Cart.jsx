@@ -1,16 +1,16 @@
 import { useState } from "react";
 
-export default function Profile({ token }) {
+export default function Cart({ token }) {
     const [firstname, setFirstName] = useState('')
     const [products, setProducts] = useState([])
     
 
     return (
         <div>
-            <h1>Profile</h1>
+            <h1>Cart</h1>
 
             <form>
-                <p>Recent Products Purchased</p>
+                <p>Items Added to Cart</p>
 
             </form>
 

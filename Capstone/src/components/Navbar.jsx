@@ -8,7 +8,7 @@ export default function NavBar({ token }) {
                     <Link to="/products">Products</Link>
                 </li>
                 <li>
-                    <Link to="/profile">Profile</Link>
+                    <Link to="/cart">Cart</Link>
                 </li>
                 <li>
                     <Link to="/login">Login</Link>

@@ -1,3 +1,5 @@
+import SingleProduct from "../pages/SingleProduct";
+
 const API_URL = 'https://fakestoreapi.com/products';
 
 export async function fetchAllProducts() {
@@ -10,20 +12,21 @@ export async function fetchAllProducts() {
         console.error(err);
     }
 };
-fetchAllProducts();
 
-export async function fetchProductById() {
+
+export async function fetchProductById(id) {
     try {
         const response = await fetch(
-            `${API_URL}/1`
+            `${API_URL}/${id}`
         );
         const productById = await response.json();
         console.log(productById);
+        return productById;
     } catch (err) {
         console.error(err);
     }
 };
-fetchProductById()
+
 
 export async function addNewProduct(product) {
     try {
@@ -57,6 +60,3 @@ export async function deleteProduct(id) {
     console.error(err);
 }
 };
-
-
-
