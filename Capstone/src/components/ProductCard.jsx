@@ -16,7 +16,10 @@ export default function ProductCard({product}) {
         <p>Decription: {description}</p>
         <img src={image} alt={name} />
 <Link className="linkbutton" to={`/products/${id}`}>View Product</Link>
-{/* //<button onClick={() => handleClick(id)}>Add To Cart</button> */}
+<div>
+<button onClick={() => handleClick(id)}>Add To Cart</button>
+</div>
+
 <button onClick={() => handleClick(id)}>Delete Product</button>
 </div>
     )
