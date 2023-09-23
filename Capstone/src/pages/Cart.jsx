@@ -9,11 +9,8 @@ export default function Cart({ token }) {
     return (
         <div>
             <h1>Cart</h1>
-
-            <form>
-                <p>Items Added to Cart</p>
-
-            </form>
+            <p>Items Added to Cart:</p>
+            
 
         </div>
 

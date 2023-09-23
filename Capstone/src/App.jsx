@@ -6,6 +6,7 @@ import Products from './pages/Products';
 import Cart from './pages/Cart';
 import NavBar from './components/Navbar';
 import SingleProduct from './pages/SingleProduct';
+import NewProductForm from './components/NewProductForm';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
