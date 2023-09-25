@@ -20,8 +20,8 @@ export default function Products() {
      return(
         <>
         <h1> Shop All Products</h1>
-        <button>  
-   <Link to="/cart"> Checkout Cart</Link></button> 
+        
+        <button><Link to="/cart">Checkout Cart</Link></button> 
 
         {products && 
         products.map((product) => (

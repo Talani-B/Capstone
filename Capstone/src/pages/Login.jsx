@@ -2,19 +2,19 @@ import { useState } from 'react';
 
 
 export default function Login({ setToken }) {
-    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
     return (
         <>
             <h1>Login</h1>
             <form onSubmit={(e) => handleSubmit(e, email, password)}>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="username">Username</label>
                 <input
                     type="text"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    id="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                 />
                 <label htmlFor="password">Password</label>
                 <input
