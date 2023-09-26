@@ -60,3 +60,15 @@ export async function deleteProduct(id) {
     console.error(err);
 }
 };
+
+export async function fetchCart() {
+    try{
+        const response = await fetch(`
+        ${API_URL}/${carts}` , {
+            method: 'Add',
+        });
+        const cartItems = await response.json();
+    } catch(err) {
+        console.error(err)
+    }
+}
