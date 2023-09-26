@@ -5,7 +5,7 @@ export default function NavBar({ token }) {
         <nav>
             <ul>
                 <li>
-                    <Link to="/">Products</Link>
+                    <Link to="/products">Products</Link>
                 </li>
                 <li>
                     <Link to="/cart">Cart</Link>
