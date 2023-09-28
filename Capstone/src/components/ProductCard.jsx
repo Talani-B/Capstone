@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { addNewProduct, addToCart } from '../API';
 import { deleteProduct} from '../API';
-import Cart from '../pages/Cart';
 
 export default function ProductCard({product}) {
     const {id, name, price, category, description, image} = product;

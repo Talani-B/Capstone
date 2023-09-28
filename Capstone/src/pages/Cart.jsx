@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { deleteProduct } from "../API";
-import { addToCart } from "../API";
+
 
 export default function Cart({ token }) {
     const [products, setProducts] = useState([])
