@@ -1,16 +1,21 @@
 import { useState } from "react";
+import { deleteProduct } from "../API";
+import { AddProductToCart } from "../API";
 
-export default function Cart({ token, cartItems, setCartItems }) {
-    
+export default function Cart({ token }) {
+    const [firstname, setFirstName] = useState('')
+    const [products, setProducts] = useState([])
+    const [cart, setCart]= useState('')
     
 
     return (
         <div>
             <h1>Cart</h1>
-            <div>
+
+            <form>
                 <p>Items Added to Cart</p>
 
-            </div>
+            </form>
 
         </div>
 
