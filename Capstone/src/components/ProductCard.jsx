@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
-import { addNewProduct, addProductToCart } from '../API';
+import { addNewProduct, addToCart } from '../API';
 import { deleteProduct} from '../API';
-
+import Cart from '../pages/Cart';
 
 export default function ProductCard({product}) {
     const {id, name, price, category, description, image} = product;
- async function handleClick() {
-    await addProductToCart();
-    await deleteProduct(id);
-       
+    async function handleClick(id) {
+    await deleteProduct(id); 
+    
     }
     return (
         <div className="productCard" key={id}>
@@ -20,7 +19,7 @@ export default function ProductCard({product}) {
         <img src={image} alt={name} />
 <Link className="linkbutton" to={`/products/${id}`}>View Product</Link>
 <div>
-<button onClick={() => handleClick(id)}>Add To Cart</button>
+<button onClick={() => addToCart(product)}>Add To Cart</button>
 </div>
 
 <button onClick={() => handleClick(id)}>Delete Product</button>
