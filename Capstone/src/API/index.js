@@ -63,7 +63,7 @@ export async function addNewProduct(product) {
 export async function deleteProduct() {
     try{
         const response = await fetch(`
-        ${API_URL}/products/carts/`, {
+        ${API_URL}/products/6`, {
        
             method: 'DELETE',
     });
@@ -97,14 +97,25 @@ export async function fetchCart() {
           }
         };
     
-        export const AddProductToCart = async () => {
+        export const addProductToCart = async () => {
             try {
               const response = await fetch(`${API_URL}/products/carts`);
-              const result = await response.json();
-              console.log(result);
-              return result;
+              const addProduct = await response.json();
+              console.log(addProduct);
+              return addProduct;
             } catch (err) {
               console.error(err);
             }
           };
 
+          export const deleteProductFromCart = async () => {
+            try {
+              const response = await fetch(`${API_URL}/carts/6`);
+              const removeFromCart = await response.json();
+              console.log(removeFromCart);
+              return removeFromCart;
+            } catch (err) {
+              console.error(err);
+            }
+          };
+          

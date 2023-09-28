@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { deleteProduct} from '../API';
 
+
 export default function ProductCard({product}) {
     const {id, name, price, category, description, image} = product;
  async function handleClick(id) {

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { deleteProduct } from "../API";
-import { AddProductToCart } from "../API";
+import { addProductToCart } from "../API";
 
 export default function Cart({ token }) {
     const [firstname, setFirstName] = useState('')
