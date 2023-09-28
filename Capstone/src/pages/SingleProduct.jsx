@@ -28,7 +28,7 @@ export default function SingleProduct() {
         <p>Description: {description}</p>
         { category &&
           <section>
-            <h3>Catergory: {category.name}</h3>
+            <h3>Catergory: {category}</h3>
           </section>
         }
       </div>

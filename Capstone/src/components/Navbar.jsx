@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function NavBar({ token }) {
+export default function NavBar({ cart, setCart,token, setToken }) {
+    const navigate = useNavigate();
+    console.log(cart, 'cart in navbar')
     return (
         <nav>
             <ul>

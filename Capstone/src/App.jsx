@@ -7,17 +7,20 @@ import Cart from './pages/Cart';
 import NavBar from './components/Navbar';
 import SingleProduct from './pages/SingleProduct';
 
+
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
+  const [cart, setCart] = useState([]);
+  console.log(cart, 'cart');
   return (
     <div>
       <NavBar token={token} setToken={setToken} />
       <Routes>
          <Route path="/login" element={<Login setToken={setToken} />} />
         <Route path="/register" element={<Register setToken={setToken} />} />
-        <Route path="/products" element={<Products token={token} />} />
-        <Route path="/cart" element={<Cart token={token} />} />
-        <Route path="/products/:id" element={<SingleProduct token={token} />} />
+        <Route path="/products/" element={<Products cart={cart} setCart={setCart} token={token} />} />
+        <Route path="/cart" element={<Cart cart={cart} setCart={setCart} token={token} />} />
+        <Route path="/products/:id" element={<SingleProduct cart={cart} setCart={setCart} token={token} />} />
       </Routes>
     </div>
   )

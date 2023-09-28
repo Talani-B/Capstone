@@ -34,7 +34,7 @@ export default function AuthForm({ buttonText, handleSubmit}) {
         type="text"
         id="username"
         value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        onChange={(e) => setEmail(e.target.value)}
         />
         <label htmlFor="password">Password</label>
         <input 
