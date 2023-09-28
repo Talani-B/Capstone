@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
+import { addNewProduct, addProductToCart } from '../API';
 import { deleteProduct} from '../API';
 
 
 export default function ProductCard({product}) {
     const {id, name, price, category, description, image} = product;
- async function handleClick(id) {
-        await deleteProduct(id);
+ async function handleClick() {
+    await addProductToCart();
+    await deleteProduct(id);
        
     }
     return (

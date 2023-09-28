@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchCategories } from "../Api/index.js";
-import "../App.css";
+
 
 export default function Categories() {
   const [categories, setCategories] = useState([]);

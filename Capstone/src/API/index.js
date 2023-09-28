@@ -40,16 +40,16 @@ export async function fetchCategories() {
 };
 
 
-export async function addNewProduct(product) {
+export async function addNewProduct() {
     try {
         const response = await fetch(
-            `${API_URL}/${productObj}`,
+            `${API_URL}/products}`,
             {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(productObj),
+                body: JSON.stringify(products),
             }
         );
         const NewProduct= await response.json();
@@ -60,7 +60,7 @@ export async function addNewProduct(product) {
 
 };
 
-export async function deleteProduct() {
+ export async function deleteProduct() {
     try{
         const response = await fetch(`
         ${API_URL}/products/6`, {
@@ -97,9 +97,9 @@ export async function fetchCart() {
           }
         };
     
-        export const addProductToCart = async () => {
+        export async function addProductToCart(id) {
             try {
-              const response = await fetch(`${API_URL}/products/carts`);
+              const response = await fetch(`${API_URL}/carts`);
               const addProduct = await response.json();
               console.log(addProduct);
               return addProduct;
@@ -108,7 +108,7 @@ export async function fetchCart() {
             }
           };
 
-          export const deleteProductFromCart = async () => {
+          export async function deleteProductFromCart() {
             try {
               const response = await fetch(`${API_URL}/carts/6`);
               const removeFromCart = await response.json();
