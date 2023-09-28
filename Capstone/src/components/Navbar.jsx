@@ -1,8 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function NavBar({ cart, setCart,token, setToken }) {
-    const navigate = useNavigate();
-    console.log(cart, 'cart in navbar')
+export default function NavBar({ token }) {
     return (
         <nav>
             <ul>
@@ -11,6 +9,7 @@ export default function NavBar({ cart, setCart,token, setToken }) {
                 </li>
                 <li>
                     <Link to="/cart">Cart</Link>
+
                 </li>
                 <li>
                     <Link to="/login">Login</Link>

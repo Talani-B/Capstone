@@ -24,6 +24,7 @@ export async function fetchProductById(id) {
         return productById;
     } catch (err) {
         console.error(err);
+
     }
 };
 
@@ -61,14 +62,3 @@ export async function deleteProduct(id) {
 }
 };
 
-export async function fetchCart() {
-    try{
-        const response = await fetch(`
-        ${API_URL}/${carts}` , {
-            method: 'Add',
-        });
-        const cartItems = await response.json();
-    } catch(err) {
-        console.error(err)
-    }
-}

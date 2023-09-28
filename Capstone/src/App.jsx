@@ -11,7 +11,8 @@ import SingleProduct from './pages/SingleProduct';
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [cart, setCart] = useState([]);
-  console.log(cart, 'cart');
+
+  console.log(setCart, 'cart');
   return (
     <div>
       <NavBar token={token} setToken={setToken} />

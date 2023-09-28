@@ -24,6 +24,7 @@ export default function SingleProduct() {
       <div className="single-product">
         <img src={imageUrl} alt={name} />
         <h2>Name: {name}</h2>
+        <p>Id: {product.id}</p>
         <p>Price: {price}</p>
         <p>Description: {description}</p>
         { category &&

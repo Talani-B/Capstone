@@ -5,9 +5,8 @@ import NewProductForm from "../components/NewProductForm"
 
 
 
-export default function Products({token, cart, setCart}) {
+export default function Products() {
     const [products, setProducts] = useState([])
-    
     
  async function fetchProducts() {
       const response= await fetchAllProducts()
