@@ -18,7 +18,7 @@ export default function Cart({ token, cart, setCart }) {
                 key={item}
                 setCart={setCart}
                 cart={cart}
-                product={product}
+                product={item}
                  />
         ))
 }

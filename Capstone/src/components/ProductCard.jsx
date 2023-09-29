@@ -4,6 +4,7 @@ import { deleteProduct } from "../API";
 
 export default function ProductCard({ product, cart, setCart }) {
   const { id, name, price, category, description, image } = product;
+ 
   async function handleClick(product) {
     await deleteProduct(id);
   }
