@@ -12,7 +12,7 @@ function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [cart, setCart] = useState([]);
 
-  console.log(setCart, 'cart');
+  console.log(cart,"cart" );
   return (
     <div>
       <NavBar token={token} setToken={setToken} />

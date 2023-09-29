@@ -5,7 +5,7 @@ import NewProductForm from "../components/NewProductForm"
 
 
 
-export default function Products() {
+export default function Products({cart, setCart}) {
     const [products, setProducts] = useState([])
     
  async function fetchProducts() {
@@ -23,6 +23,8 @@ export default function Products() {
         products.map((product) => (
             <ProductCard
                 key={product.id}
+                cart={cart}
+                setCart={setCart}
                 product={product}
                  />
         ))

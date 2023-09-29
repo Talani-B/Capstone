@@ -97,7 +97,7 @@ export async function fetchCart() {
           }
         };
     
-        export async function addProductToCart(id) {
+        export async function addToCart(id) {
             try {
               const response = await fetch(`${API_URL}/carts`);
               const addProduct = await response.json();
@@ -108,7 +108,7 @@ export async function fetchCart() {
             }
           };
 
-          export async function deleteProductFromCart() {
+          export async function deleteFromCart() {
             try {
               const response = await fetch(`${API_URL}/carts/6`);
               const removeFromCart = await response.json();
