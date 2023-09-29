@@ -73,6 +73,8 @@ export async function addNewProduct() {
 }
 };
 
+
+
 export async function fetchCart() {
     try {
         const response = await fetch(`
@@ -97,11 +99,12 @@ export async function fetchCart() {
           }
         };
     
-        export async function addToCart(id) {
+        export async function addToCart(product) {
             try {
-              const response = await fetch(`${API_URL}/carts`);
-              const addProduct = await response.json();
-              console.log(addProduct);
+              const response = await fetch(`${API_URL}/carts`); {
+                const addProduct = await response.json();
+                console.log(addProduct);
+              }
               return addProduct;
             } catch (err) {
               console.error(err);
@@ -119,3 +122,32 @@ export async function fetchCart() {
             }
           };
           
+          export const loginUser = async (username, password) => {
+            try{
+              const response = await fetch(`${API_URL}/auth/login`, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                  username: username,
+                  password: password
+                 } 
+              )
+            });
+                const result = await response.json();
+                console.log(result)
+              } catch(err){
+                console.error(err);
+              }
+          }
+
+          export async function singleUser() {
+            try{ 
+                const response = await fetch(`${API_URL}/users/1`);
+                const user = await response.json(token);
+                console.log(user.token)
+            } catch(err) {
+                console.error(err)
+            }
+          }
