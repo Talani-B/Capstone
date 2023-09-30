@@ -7,34 +7,29 @@ export default function Login({ token, setToken }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-
-    function navigateToProduct() {
-      
-    };
-    async function handleSubmit(e) {
-        e.preventDefault();
-        if (password.length < 8 || username==="") {
-            setUsername('')
-            setPassword('')
-            return (setError("ERROR: incorrect username or password"))
-        }
-
-        const result = await loginUser(username, password, setError)
-        console.log("result", result)
-
-        localStorage.setItem('Token', result);
-        setToken(localStorage.getItem('Token')) 
-        console.log("Login token", token)
-        setUsername('')
-        setPassword('')
-        if (result) { navigate('/products'); }
-
-
-
+  function navigateToProduct() {}
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (password.length < 6 || username === "") {
+      setUsername("");
+      setPassword("");
+      return setError("ERROR: incorrect username or password");
     }
 
+    const result = await loginUser(username, password, setError);
+    console.log("result", result);
+
+    localStorage.setItem("Token", result);
+    setToken(localStorage.getItem("Token"));
+    console.log("Login token", token);
+    setUsername("");
+    setPassword("");
+    if (result) {
+      navigate("/products");
+    }
+  }
 
   return (
     <>
@@ -47,6 +42,7 @@ export default function Login({ token, setToken }) {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
+        <ul></ul>
         <label htmlFor="password">Password</label>
         <input
           type="text"
@@ -54,12 +50,13 @@ export default function Login({ token, setToken }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <ul></ul>
         <button type="submit">Login</button>
-        <div>
+        <ul>
           <label htmlFor="New-User">
-            Create an account <a href="/register">Sign Up</a>
+            Create an account? <a href="/register">Register</a>
           </label>
-        </div>
+        </ul>
       </form>
     </>
   );
