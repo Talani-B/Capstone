@@ -1,40 +1,43 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { loginFunction } from "../API";
 import { loginUser } from "../API";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 
-export default function Login({ token, setToken }) {
+export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
-  const navigate = useNavigate();
+  const [token, setToken]= useState("");
+  const navigate = useNavigate()
+  
+  function navigateToProduct() {
+    
+    navigate('/products');
 
-  function navigateToProduct() {}
-  async function handleSubmit(e) {
-    e.preventDefault();
-    if (password.length < 6 || username === "") {
-      setUsername("");
-      setPassword("");
-      return setError("ERROR: incorrect username or password");
+};
+        
+    async function handleSubmit(event) {
+        event.preventDefault();
+       
+
+        const result = await loginFunction(username, password)
+        console.log("result is", result)
+
+      setToken(result.token)
+        console.log("Login page token is ", token)
+        setUsername('')
+        setPassword('')
+    localStorage.setItem("Token", result) 
+    if (result) { navigateToProduct(); }
+
+
     }
-
-    const result = await loginUser(username, password, setError);
-    console.log("result", result);
-
-    localStorage.setItem("Token", result);
-    setToken(localStorage.getItem("Token"));
-    console.log("Login token", token);
-    setUsername("");
-    setPassword("");
-    if (result) {
-      navigate("/products");
-    }
-  }
+    
 
   return (
     <>
       <h1>Login</h1>
-      <form onSubmit={(e) => handleSubmit(e, username, password, error)}>
+      <form onSubmit={(e) => handleSubmit(e, username, password)}>
         <label htmlFor="username">Username</label>
         <input
           type="text"
@@ -52,11 +55,11 @@ export default function Login({ token, setToken }) {
         />
         <ul></ul>
         <button type="submit">Login</button>
-        <ul>
-          <label htmlFor="New-User">
+        <ul></ul>
+          {/* {<label htmlFor="New-User"> */} 
             Create an account? <a href="/register">Register</a>
-          </label>
-        </ul>
+          {/* </label> */}
+        
       </form>
     </>
   );

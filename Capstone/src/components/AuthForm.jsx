@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { loginUser } from "../API";
 import { addNewUser } from "../API";
 
 export default function AuthForm({ buttonText, handleSubmit }) {
@@ -43,7 +42,7 @@ export default function AuthForm({ buttonText, handleSubmit }) {
         onChange={(e) => setPassword(e.target.value)}
       />
       <ul></ul>
-          <label htmlFor="email">Email</label>
+      <label htmlFor="email">Email</label>
       <input
         type="text"
         id="email"
@@ -55,9 +54,9 @@ export default function AuthForm({ buttonText, handleSubmit }) {
         <button type="submit">{buttonText}</button>
       </div>
       <ul>
-      <label htmlFor="Current-User">
-        Already have an account ? <a href="/login">Login</a>
-      </label>
+        <label htmlFor="Current-User">
+          Already have an account ? <a href="/login">Login</a>
+        </label>
       </ul>
     </form>
   );

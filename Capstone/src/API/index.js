@@ -76,23 +76,25 @@ export async function fetchUsers() {
     console.error(err);
   }
 }
-
-export async function registerUser() {
+// register user 
+export async function registerUser(firstname,lastname, username, password,email) {
   try {
     const response = await fetch(
       `
-        ${API_URL}/users/register`,
+        ${API_URL}/users`,
       {
-        method: "POST",
+        method: 'POST',
         headers: {
           "Content-type": "application/json",
         },
         body: JSON.stringify({
-          firstname: firstname,
-          lastname: lastname,
-          email: email,
-          username: username,
-          password: password,
+          user: {
+            firstname: firstname,
+            lastname: lastname,
+            username: username,
+            password: password,
+            email: email,
+          }
         }),
       }
     );
@@ -104,9 +106,9 @@ export async function registerUser() {
   }
 }
 
-export async function loginFunction(username, password, setError) {
+export async function loginFunction(username, password) {
   try {
-    const response = await fetch(`https://fakestoreapi.com//login`, {
+    const response = await fetch(`https://fakestoreapi.com/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -114,15 +116,13 @@ export async function loginFunction(username, password, setError) {
       body: JSON.stringify({
         username: username,
         password: password,
-      }),
+      })
     });
     const result = await response.json();
-
     console.log(result.token);
     return result.token;
   } catch (error) {
-    console.log(error.message);
-    setError("Incorrect username or password");
+   console.error(error);
   }
 }
 

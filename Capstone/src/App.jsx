@@ -19,7 +19,7 @@ function App() {
         <Route path="/login" element={<Login setToken={setToken} />} />
         <Route path="/register" element={<Register setToken={setToken} />} />
         <Route
-          path="/products/"
+          path="/products"
           element={<Products cart={cart} setCart={setCart} token={token} />}
         />
         <Route
