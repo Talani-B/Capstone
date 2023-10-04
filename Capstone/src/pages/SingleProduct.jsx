@@ -21,6 +21,7 @@ export default function SingleProduct() {
   return (
     <>
       <Link to="/products">Back to All Products</Link>
+    
       <div className="single-product">
         <img src={imageUrl} alt={name} />
         <h2>Name: {name}</h2>
@@ -33,6 +34,11 @@ export default function SingleProduct() {
           </section>
         )}
       </div>
+      <>
+      <footer>
+      <Link to="/cart">Back to Cart</Link>
+      </footer>
+      </>
     </>
   );
 }

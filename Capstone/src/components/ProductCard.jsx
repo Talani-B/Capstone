@@ -3,6 +3,7 @@ import { addNewProduct, addToCart } from "../API";
 import { deleteProduct } from "../API";
 
 export default function ProductCard({ product, cart, setCart }) {
+ 
   const { id, name, price, category, description, image } = product;
   async function handleClick(id) {
     await deleteProduct(id);
@@ -35,7 +36,7 @@ export default function ProductCard({ product, cart, setCart }) {
       <p>Id: {id}</p>
       <p>Price: {price}</p>
       <p>Category: {category}</p>
-      <p>Decription: {description}</p>
+      <p>Description: {description}</p>
       <img src={image} alt={name} />
       <Link className="linkbutton" to={`/products/${id}`}>
         View Product

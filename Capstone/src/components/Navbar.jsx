@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 export default function NavBar({ token }) {
+    const [cart, setCart] = useState('')
   return (
     <nav>
       <ul>
@@ -14,10 +17,13 @@ export default function NavBar({ token }) {
           <Link to="/products">Products</Link>
         </li>
         <li>
-          <Link to="/cart">Cart</Link>
+          <Link to="/cart"> Cart 🛒</Link>
+      
+                        
         </li>
         <button>Logout</button>
       </ul>
+      
     </nav>
   );
 }
