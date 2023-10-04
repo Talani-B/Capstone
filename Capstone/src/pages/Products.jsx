@@ -23,10 +23,9 @@ export default function Products({ cart, setCart }) {
   function selectCategory(e) {
     setSelectedCategory(e.target.value);
   }
-  let product = products;
+  let Products = products;
   if (selectedCategory !== "all") {
-    products = products.filter(
-      (product) => product.category === selectCategory
+    products = products.filter((product) => product.category === selectCategory
     );
   }
   return (
